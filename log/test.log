@@ -1,489 +1,148 @@
-2022-11-29 11:06:30.062  INFO 34260 --- [restartedMain] c.k.b.BatchprogramApplication            : Starting BatchprogramApplication using Java 17.0.4.1 on DESKTOP-18053R8 with PID 34260 (C:\Users\김예슬\Documents\sts\batchprogram\bin\main started by 김예슬 in C:\Users\김예슬\Documents\sts\batchprogram)
-2022-11-29 11:06:30.070 DEBUG 34260 --- [restartedMain] c.k.b.BatchprogramApplication            : Running with Spring Boot v2.6.14-SNAPSHOT, Spring v5.3.24
-2022-11-29 11:06:30.071  INFO 34260 --- [restartedMain] c.k.b.BatchprogramApplication            : No active profile set, falling back to 1 default profile: "default"
-2022-11-29 11:06:30.149  INFO 34260 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2022-11-29 11:06:30.732  INFO 34260 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2022-11-29 11:06:30.799  INFO 34260 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 54 ms. Found 2 JPA repository interfaces.
-2022-11-29 11:06:31.148  INFO 34260 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2022-11-29 11:06:31.580  INFO 34260 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2022-11-29 11:06:31.767  INFO 34260 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2022-11-29 11:06:31.855  INFO 34260 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.14.Final
-2022-11-29 11:06:32.101  INFO 34260 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2022-11-29 11:06:32.246  INFO 34260 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
-2022-11-29 11:06:33.032  INFO 34260 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2022-11-29 11:06:33.040  INFO 34260 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2022-11-29 11:06:33.476  WARN 34260 --- [restartedMain] o.s.b.a.batch.JpaBatchConfigurer         : JPA does not support custom isolation levels, so locks may not be taken when launching Jobs
-2022-11-29 11:06:33.482  INFO 34260 --- [restartedMain] o.s.b.c.r.s.JobRepositoryFactoryBean     : No database type set, using meta data indicating: MYSQL
-2022-11-29 11:06:33.516  INFO 34260 --- [restartedMain] o.s.b.c.l.support.SimpleJobLauncher      : No TaskExecutor has been set, defaulting to synchronous executor.
-2022-11-29 11:06:33.869  INFO 34260 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2022-11-29 11:06:33.893  INFO 34260 --- [restartedMain] c.k.b.BatchprogramApplication            : Started BatchprogramApplication in 4.462 seconds (JVM running for 5.433)
-2022-11-29 11:06:33.896  INFO 34260 --- [restartedMain] o.s.b.a.b.JobLauncherApplicationRunner   : Running default command line with: [v=1, date=20221129]
-2022-11-29 11:06:33.967  INFO 34260 --- [restartedMain] o.s.b.c.l.support.SimpleJobLauncher      : Job: [SimpleJob: [name=csvToJpaJob1_batchBuild]] launched with the following parameters: [{date=20221129, v=1}]
-2022-11-29 11:06:34.019  INFO 34260 --- [restartedMain] o.s.batch.core.job.SimpleStepHandler     : Executing step: [csvToJpaJob1_batchStep1]
-2022-11-29 11:06:34.120  INFO 34260 --- [restartedMain] o.s.batch.core.step.AbstractStep         : Step: [csvToJpaJob1_batchStep1] executed in 101ms
-2022-11-29 11:06:34.135  INFO 34260 --- [restartedMain] o.s.b.c.l.support.SimpleJobLauncher      : Job: [SimpleJob: [name=csvToJpaJob1_batchBuild]] completed with the following parameters: [{date=20221129, v=1}] and the following status: [COMPLETED] in 136ms
-2022-11-29 11:06:34.149  WARN 34260 --- [SpringApplicationShutdownHook] o.s.b.f.support.DisposableBeanAdapter    : Custom destroy method 'close' on bean with name 'jsonJob2_jsonReader' threw an exception: org.springframework.batch.item.ItemStreamException: Error while closing item reader
-2022-11-29 11:06:34.149  WARN 34260 --- [SpringApplicationShutdownHook] o.s.b.f.support.DisposableBeanAdapter    : Custom destroy method 'close' on bean with name 'jsonJob1_jsonReader' threw an exception: org.springframework.batch.item.ItemStreamException: Error while closing item reader
-2022-11-29 11:06:34.150  INFO 34260 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2022-11-29 11:06:34.153  INFO 34260 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2022-11-29 11:06:34.162  INFO 34260 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2022-11-29 11:20:14.059  INFO 19068 --- [restartedMain] c.k.b.BatchprogramApplication            : Starting BatchprogramApplication using Java 17.0.4.1 on DESKTOP-18053R8 with PID 19068 (C:\Users\김예슬\Documents\sts\batchprogram\bin\main started by 김예슬 in C:\Users\김예슬\Documents\sts\batchprogram)
-2022-11-29 11:20:14.060 DEBUG 19068 --- [restartedMain] c.k.b.BatchprogramApplication            : Running with Spring Boot v2.6.14-SNAPSHOT, Spring v5.3.24
-2022-11-29 11:20:14.060  INFO 19068 --- [restartedMain] c.k.b.BatchprogramApplication            : No active profile set, falling back to 1 default profile: "default"
-2022-11-29 11:20:14.110  INFO 19068 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2022-11-29 11:20:14.580  INFO 19068 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2022-11-29 11:20:14.626  INFO 19068 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 38 ms. Found 2 JPA repository interfaces.
-2022-11-29 11:20:14.921  INFO 19068 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2022-11-29 11:20:15.219  INFO 19068 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2022-11-29 11:20:15.336  INFO 19068 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2022-11-29 11:20:15.397  INFO 19068 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.14.Final
-2022-11-29 11:20:15.560  INFO 19068 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2022-11-29 11:20:15.668  INFO 19068 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
-2022-11-29 11:20:16.229  INFO 19068 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2022-11-29 11:20:16.238  INFO 19068 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2022-11-29 11:20:16.585  WARN 19068 --- [restartedMain] o.s.b.a.batch.JpaBatchConfigurer         : JPA does not support custom isolation levels, so locks may not be taken when launching Jobs
-2022-11-29 11:20:16.588  INFO 19068 --- [restartedMain] o.s.b.c.r.s.JobRepositoryFactoryBean     : No database type set, using meta data indicating: MYSQL
-2022-11-29 11:20:16.612  INFO 19068 --- [restartedMain] o.s.b.c.l.support.SimpleJobLauncher      : No TaskExecutor has been set, defaulting to synchronous executor.
-2022-11-29 11:20:16.901  INFO 19068 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2022-11-29 11:20:16.922  INFO 19068 --- [restartedMain] c.k.b.BatchprogramApplication            : Started BatchprogramApplication in 3.25 seconds (JVM running for 4.122)
-2022-11-29 11:20:16.923  INFO 19068 --- [restartedMain] o.s.b.a.b.JobLauncherApplicationRunner   : Running default command line with: [v=1, date=20221129]
-2022-11-29 11:20:16.987  INFO 19068 --- [restartedMain] o.s.b.c.l.support.SimpleJobLauncher      : Job: [SimpleJob: [name=csvToJpaJob2_batchBuild]] launched with the following parameters: [{date=20221129, v=1}]
-2022-11-29 11:20:17.029  INFO 19068 --- [restartedMain] o.s.batch.core.job.SimpleStepHandler     : Executing step: [csvToJpaJob2_batchStep1]
-2022-11-29 11:20:17.061 ERROR 19068 --- [restartedMain] o.s.batch.core.step.AbstractStep         : Encountered an error executing step csvToJpaJob2_batchStep1 in job csvToJpaJob2_batchBuild
-
-org.springframework.batch.item.file.FlatFileParseException: Parsing error at line: 1 in resource=[file [C:\Users\김예슬\Documents\sts\batchprogram\bin\main\sample\csvToJpaJob2\1.txt]], input=[11:ILIL]
-	at org.springframework.batch.item.file.FlatFileItemReader.doRead(FlatFileItemReader.java:189) ~[spring-batch-infrastructure-4.3.8-SNAPSHOT.jar:4.3.8-SNAPSHOT]
-	at org.springframework.batch.item.support.AbstractItemCountingItemStreamItemReader.read(AbstractItemCountingItemStreamItemReader.java:93) ~[spring-batch-infrastructure-4.3.8-SNAPSHOT.jar:4.3.8-SNAPSHOT]
-	at org.springframework.batch.item.file.MultiResourceItemReader.readFromDelegate(MultiResourceItemReader.java:143) ~[spring-batch-infrastructure-4.3.8-SNAPSHOT.jar:4.3.8-SNAPSHOT]
-	at org.springframework.batch.item.file.MultiResourceItemReader.readNextItem(MultiResourceItemReader.java:122) ~[spring-batch-infrastructure-4.3.8-SNAPSHOT.jar:4.3.8-SNAPSHOT]
-	at org.springframework.batch.item.file.MultiResourceItemReader.read(MultiResourceItemReader.java:111) ~[spring-batch-infrastructure-4.3.8-SNAPSHOT.jar:4.3.8-SNAPSHOT]
-	at org.springframework.batch.core.step.item.SimpleChunkProvider.doRead(SimpleChunkProvider.java:99) ~[spring-batch-core-4.3.8-SNAPSHOT.jar:4.3.8-SNAPSHOT]
-	at org.springframework.batch.core.step.item.SimpleChunkProvider.read(SimpleChunkProvider.java:180) ~[spring-batch-core-4.3.8-SNAPSHOT.jar:4.3.8-SNAPSHOT]
-	at org.springframework.batch.core.step.item.SimpleChunkProvider$1.doInIteration(SimpleChunkProvider.java:126) ~[spring-batch-core-4.3.8-SNAPSHOT.jar:4.3.8-SNAPSHOT]
-	at org.springframework.batch.repeat.support.RepeatTemplate.getNextResult(RepeatTemplate.java:375) ~[spring-batch-infrastructure-4.3.8-SNAPSHOT.jar:4.3.8-SNAPSHOT]
-	at org.springframework.batch.repeat.support.RepeatTemplate.executeInternal(RepeatTemplate.java:215) ~[spring-batch-infrastructure-4.3.8-SNAPSHOT.jar:4.3.8-SNAPSHOT]
-	at org.springframework.batch.repeat.support.RepeatTemplate.iterate(RepeatTemplate.java:145) ~[spring-batch-infrastructure-4.3.8-SNAPSHOT.jar:4.3.8-SNAPSHOT]
-	at org.springframework.batch.core.step.item.SimpleChunkProvider.provide(SimpleChunkProvider.java:118) ~[spring-batch-core-4.3.8-SNAPSHOT.jar:4.3.8-SNAPSHOT]
-	at org.springframework.batch.core.step.item.ChunkOrientedTasklet.execute(ChunkOrientedTasklet.java:71) ~[spring-batch-core-4.3.8-SNAPSHOT.jar:4.3.8-SNAPSHOT]
-	at org.springframework.batch.core.step.tasklet.TaskletStep$ChunkTransactionCallback.doInTransaction(TaskletStep.java:407) ~[spring-batch-core-4.3.8-SNAPSHOT.jar:4.3.8-SNAPSHOT]
-	at org.springframework.batch.core.step.tasklet.TaskletStep$ChunkTransactionCallback.doInTransaction(TaskletStep.java:331) ~[spring-batch-core-4.3.8-SNAPSHOT.jar:4.3.8-SNAPSHOT]
-	at org.springframework.transaction.support.TransactionTemplate.execute(TransactionTemplate.java:140) ~[spring-tx-5.3.24.jar:5.3.24]
-	at org.springframework.batch.core.step.tasklet.TaskletStep$2.doInChunkContext(TaskletStep.java:273) ~[spring-batch-core-4.3.8-SNAPSHOT.jar:4.3.8-SNAPSHOT]
-	at org.springframework.batch.core.scope.context.StepContextRepeatCallback.doInIteration(StepContextRepeatCallback.java:82) ~[spring-batch-core-4.3.8-SNAPSHOT.jar:4.3.8-SNAPSHOT]
-	at org.springframework.batch.repeat.support.RepeatTemplate.getNextResult(RepeatTemplate.java:375) ~[spring-batch-infrastructure-4.3.8-SNAPSHOT.jar:4.3.8-SNAPSHOT]
-	at org.springframework.batch.repeat.support.RepeatTemplate.executeInternal(RepeatTemplate.java:215) ~[spring-batch-infrastructure-4.3.8-SNAPSHOT.jar:4.3.8-SNAPSHOT]
-	at org.springframework.batch.repeat.support.RepeatTemplate.iterate(RepeatTemplate.java:145) ~[spring-batch-infrastructure-4.3.8-SNAPSHOT.jar:4.3.8-SNAPSHOT]
-	at org.springframework.batch.core.step.tasklet.TaskletStep.doExecute(TaskletStep.java:258) ~[spring-batch-core-4.3.8-SNAPSHOT.jar:4.3.8-SNAPSHOT]
-	at org.springframework.batch.core.step.AbstractStep.execute(AbstractStep.java:208) ~[spring-batch-core-4.3.8-SNAPSHOT.jar:4.3.8-SNAPSHOT]
-	at org.springframework.batch.core.job.SimpleStepHandler.handleStep(SimpleStepHandler.java:152) ~[spring-batch-core-4.3.8-SNAPSHOT.jar:4.3.8-SNAPSHOT]
-	at org.springframework.batch.core.job.AbstractJob.handleStep(AbstractJob.java:413) ~[spring-batch-core-4.3.8-SNAPSHOT.jar:4.3.8-SNAPSHOT]
-	at org.springframework.batch.core.job.SimpleJob.doExecute(SimpleJob.java:136) ~[spring-batch-core-4.3.8-SNAPSHOT.jar:4.3.8-SNAPSHOT]
-	at org.springframework.batch.core.job.AbstractJob.execute(AbstractJob.java:320) ~[spring-batch-core-4.3.8-SNAPSHOT.jar:4.3.8-SNAPSHOT]
-	at org.springframework.batch.core.launch.support.SimpleJobLauncher$1.run(SimpleJobLauncher.java:149) ~[spring-batch-core-4.3.8-SNAPSHOT.jar:4.3.8-SNAPSHOT]
-	at org.springframework.core.task.SyncTaskExecutor.execute(SyncTaskExecutor.java:50) ~[spring-core-5.3.24.jar:5.3.24]
-	at org.springframework.batch.core.launch.support.SimpleJobLauncher.run(SimpleJobLauncher.java:140) ~[spring-batch-core-4.3.8-SNAPSHOT.jar:4.3.8-SNAPSHOT]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
-	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344) ~[spring-aop-5.3.24.jar:5.3.24]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:198) ~[spring-aop-5.3.24.jar:5.3.24]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-5.3.24.jar:5.3.24]
-	at org.springframework.batch.core.configuration.annotation.SimpleBatchConfiguration$PassthruAdvice.invoke(SimpleBatchConfiguration.java:128) ~[spring-batch-core-4.3.8-SNAPSHOT.jar:4.3.8-SNAPSHOT]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.24.jar:5.3.24]
-	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:215) ~[spring-aop-5.3.24.jar:5.3.24]
-	at jdk.proxy4/jdk.proxy4.$Proxy85.run(Unknown Source) ~[na:na]
-	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.execute(JobLauncherApplicationRunner.java:199) ~[spring-boot-autoconfigure-2.6.14-SNAPSHOT.jar:2.6.14-SNAPSHOT]
-	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.executeLocalJobs(JobLauncherApplicationRunner.java:173) ~[spring-boot-autoconfigure-2.6.14-SNAPSHOT.jar:2.6.14-SNAPSHOT]
-	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.launchJobFromProperties(JobLauncherApplicationRunner.java:160) ~[spring-boot-autoconfigure-2.6.14-SNAPSHOT.jar:2.6.14-SNAPSHOT]
-	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.run(JobLauncherApplicationRunner.java:155) ~[spring-boot-autoconfigure-2.6.14-SNAPSHOT.jar:2.6.14-SNAPSHOT]
-	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.run(JobLauncherApplicationRunner.java:150) ~[spring-boot-autoconfigure-2.6.14-SNAPSHOT.jar:2.6.14-SNAPSHOT]
-	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:773) ~[spring-boot-2.6.14-SNAPSHOT.jar:2.6.14-SNAPSHOT]
-	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:763) ~[spring-boot-2.6.14-SNAPSHOT.jar:2.6.14-SNAPSHOT]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:314) ~[spring-boot-2.6.14-SNAPSHOT.jar:2.6.14-SNAPSHOT]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1317) ~[spring-boot-2.6.14-SNAPSHOT.jar:2.6.14-SNAPSHOT]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306) ~[spring-boot-2.6.14-SNAPSHOT.jar:2.6.14-SNAPSHOT]
-	at com.kinx.batchprogram.BatchprogramApplication.main(BatchprogramApplication.java:12) ~[main/:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
-	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) ~[spring-boot-devtools-2.6.14-SNAPSHOT.jar:2.6.14-SNAPSHOT]
-Caused by: java.lang.ArrayIndexOutOfBoundsException: Index 1 out of bounds for length 1
-	at com.kinx.batchprogram.batch.CsvToJpaJob2.lambda$1(CsvToJpaJob2.java:92) ~[main/:na]
-	at org.springframework.batch.item.file.FlatFileItemReader.doRead(FlatFileItemReader.java:185) ~[spring-batch-infrastructure-4.3.8-SNAPSHOT.jar:4.3.8-SNAPSHOT]
-	... 56 common frames omitted
-
-2022-11-29 11:20:17.064  INFO 19068 --- [restartedMain] o.s.batch.core.step.AbstractStep         : Step: [csvToJpaJob2_batchStep1] executed in 35ms
-2022-11-29 11:20:17.079  INFO 19068 --- [restartedMain] o.s.b.c.l.support.SimpleJobLauncher      : Job: [SimpleJob: [name=csvToJpaJob2_batchBuild]] completed with the following parameters: [{date=20221129, v=1}] and the following status: [FAILED] in 65ms
-2022-11-29 11:20:17.088  WARN 19068 --- [SpringApplicationShutdownHook] o.s.b.f.support.DisposableBeanAdapter    : Custom destroy method 'close' on bean with name 'jsonJob2_jsonReader' threw an exception: org.springframework.batch.item.ItemStreamException: Error while closing item reader
-2022-11-29 11:20:17.088  WARN 19068 --- [SpringApplicationShutdownHook] o.s.b.f.support.DisposableBeanAdapter    : Custom destroy method 'close' on bean with name 'jsonJob1_jsonReader' threw an exception: org.springframework.batch.item.ItemStreamException: Error while closing item reader
-2022-11-29 11:20:17.088  INFO 19068 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2022-11-29 11:20:17.092  INFO 19068 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2022-11-29 11:20:17.108  INFO 19068 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2022-11-29 11:21:11.035  INFO 34408 --- [restartedMain] c.k.b.BatchprogramApplication            : Starting BatchprogramApplication using Java 17.0.4.1 on DESKTOP-18053R8 with PID 34408 (C:\Users\김예슬\Documents\sts\batchprogram\bin\main started by 김예슬 in C:\Users\김예슬\Documents\sts\batchprogram)
-2022-11-29 11:21:11.036 DEBUG 34408 --- [restartedMain] c.k.b.BatchprogramApplication            : Running with Spring Boot v2.6.14-SNAPSHOT, Spring v5.3.24
-2022-11-29 11:21:11.037  INFO 34408 --- [restartedMain] c.k.b.BatchprogramApplication            : No active profile set, falling back to 1 default profile: "default"
-2022-11-29 11:21:11.083  INFO 34408 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2022-11-29 11:21:11.529  INFO 34408 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2022-11-29 11:21:11.576  INFO 34408 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 39 ms. Found 2 JPA repository interfaces.
-2022-11-29 11:21:11.878  INFO 34408 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2022-11-29 11:21:12.190  INFO 34408 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2022-11-29 11:21:12.337  INFO 34408 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2022-11-29 11:21:12.416  INFO 34408 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.14.Final
-2022-11-29 11:21:12.597  INFO 34408 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2022-11-29 11:21:12.719  INFO 34408 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
-2022-11-29 11:21:13.250  INFO 34408 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2022-11-29 11:21:13.259  INFO 34408 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2022-11-29 11:21:13.591  WARN 34408 --- [restartedMain] o.s.b.a.batch.JpaBatchConfigurer         : JPA does not support custom isolation levels, so locks may not be taken when launching Jobs
-2022-11-29 11:21:13.595  INFO 34408 --- [restartedMain] o.s.b.c.r.s.JobRepositoryFactoryBean     : No database type set, using meta data indicating: MYSQL
-2022-11-29 11:21:13.620  INFO 34408 --- [restartedMain] o.s.b.c.l.support.SimpleJobLauncher      : No TaskExecutor has been set, defaulting to synchronous executor.
-2022-11-29 11:21:13.904  INFO 34408 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2022-11-29 11:21:13.923  INFO 34408 --- [restartedMain] c.k.b.BatchprogramApplication            : Started BatchprogramApplication in 3.269 seconds (JVM running for 4.135)
-2022-11-29 11:21:13.925  INFO 34408 --- [restartedMain] o.s.b.a.b.JobLauncherApplicationRunner   : Running default command line with: [v=1, date=20221129]
-2022-11-29 11:21:14.018  INFO 34408 --- [restartedMain] o.s.b.c.l.support.SimpleJobLauncher      : Job: [SimpleJob: [name=csvToJpaJob2_batchBuild]] launched with the following parameters: [{date=20221129, v=1}]
-2022-11-29 11:21:14.063  INFO 34408 --- [restartedMain] o.s.batch.core.job.SimpleStepHandler     : Executing step: [csvToJpaJob2_batchStep1]
-2022-11-29 11:21:14.139  INFO 34408 --- [restartedMain] o.s.batch.core.step.AbstractStep         : Step: [csvToJpaJob2_batchStep1] executed in 75ms
-2022-11-29 11:21:14.147  INFO 34408 --- [restartedMain] o.s.b.c.l.support.SimpleJobLauncher      : Job: [SimpleJob: [name=csvToJpaJob2_batchBuild]] completed with the following parameters: [{date=20221129, v=1}] and the following status: [COMPLETED] in 108ms
-2022-11-29 11:21:14.155  WARN 34408 --- [SpringApplicationShutdownHook] o.s.b.f.support.DisposableBeanAdapter    : Custom destroy method 'close' on bean with name 'jsonJob2_jsonReader' threw an exception: org.springframework.batch.item.ItemStreamException: Error while closing item reader
-2022-11-29 11:21:14.156  WARN 34408 --- [SpringApplicationShutdownHook] o.s.b.f.support.DisposableBeanAdapter    : Custom destroy method 'close' on bean with name 'jsonJob1_jsonReader' threw an exception: org.springframework.batch.item.ItemStreamException: Error while closing item reader
-2022-11-29 11:21:14.157  INFO 34408 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2022-11-29 11:21:14.161  INFO 34408 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2022-11-29 11:21:14.168  INFO 34408 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2022-11-29 11:30:26.083  INFO 1036 --- [restartedMain] c.k.b.BatchprogramApplication            : Starting BatchprogramApplication using Java 17.0.4.1 on DESKTOP-18053R8 with PID 1036 (C:\Users\김예슬\Documents\sts\batchprogram\bin\main started by 김예슬 in C:\Users\김예슬\Documents\sts\batchprogram)
-2022-11-29 11:30:26.083 DEBUG 1036 --- [restartedMain] c.k.b.BatchprogramApplication            : Running with Spring Boot v2.6.14-SNAPSHOT, Spring v5.3.24
-2022-11-29 11:30:26.084  INFO 1036 --- [restartedMain] c.k.b.BatchprogramApplication            : No active profile set, falling back to 1 default profile: "default"
-2022-11-29 11:30:26.131  INFO 1036 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2022-11-29 11:30:26.624  INFO 1036 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2022-11-29 11:30:26.672  INFO 1036 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 41 ms. Found 2 JPA repository interfaces.
-2022-11-29 11:30:26.956  INFO 1036 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2022-11-29 11:30:27.252  INFO 1036 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2022-11-29 11:30:27.362  INFO 1036 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2022-11-29 11:30:27.427  INFO 1036 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.14.Final
-2022-11-29 11:30:27.587  INFO 1036 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2022-11-29 11:30:27.697  INFO 1036 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
-2022-11-29 11:30:28.230  INFO 1036 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2022-11-29 11:30:28.236  INFO 1036 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2022-11-29 11:30:28.588  WARN 1036 --- [restartedMain] o.s.b.a.batch.JpaBatchConfigurer         : JPA does not support custom isolation levels, so locks may not be taken when launching Jobs
-2022-11-29 11:30:28.590  INFO 1036 --- [restartedMain] o.s.b.c.r.s.JobRepositoryFactoryBean     : No database type set, using meta data indicating: MYSQL
-2022-11-29 11:30:28.615  INFO 1036 --- [restartedMain] o.s.b.c.l.support.SimpleJobLauncher      : No TaskExecutor has been set, defaulting to synchronous executor.
-2022-11-29 11:30:28.897  INFO 1036 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2022-11-29 11:30:28.916  INFO 1036 --- [restartedMain] c.k.b.BatchprogramApplication            : Started BatchprogramApplication in 3.228 seconds (JVM running for 4.082)
-2022-11-29 11:30:28.917  INFO 1036 --- [restartedMain] o.s.b.a.b.JobLauncherApplicationRunner   : Running default command line with: [v=2, date=20221129]
-2022-11-29 11:30:28.982  INFO 1036 --- [restartedMain] o.s.b.c.l.support.SimpleJobLauncher      : Job: [SimpleJob: [name=csvToJpaJob2_batchBuild]] launched with the following parameters: [{date=20221129, v=2}]
-2022-11-29 11:30:29.022  INFO 1036 --- [restartedMain] o.s.batch.core.job.SimpleStepHandler     : Executing step: [csvToJpaJob2_batchStep1]
-2022-11-29 11:30:29.110  INFO 1036 --- [restartedMain] o.s.batch.core.step.AbstractStep         : Step: [csvToJpaJob2_batchStep1] executed in 87ms
-2022-11-29 11:30:29.124  INFO 1036 --- [restartedMain] o.s.b.c.l.support.SimpleJobLauncher      : Job: [SimpleJob: [name=csvToJpaJob2_batchBuild]] completed with the following parameters: [{date=20221129, v=2}] and the following status: [COMPLETED] in 119ms
-2022-11-29 11:30:29.136  WARN 1036 --- [SpringApplicationShutdownHook] o.s.b.f.support.DisposableBeanAdapter    : Custom destroy method 'close' on bean with name 'jsonJob2_jsonReader' threw an exception: org.springframework.batch.item.ItemStreamException: Error while closing item reader
-2022-11-29 11:30:29.136  WARN 1036 --- [SpringApplicationShutdownHook] o.s.b.f.support.DisposableBeanAdapter    : Custom destroy method 'close' on bean with name 'jsonJob1_jsonReader' threw an exception: org.springframework.batch.item.ItemStreamException: Error while closing item reader
-2022-11-29 11:30:29.137  INFO 1036 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2022-11-29 11:30:29.141  INFO 1036 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2022-11-29 11:30:29.151  INFO 1036 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2022-11-29 11:32:08.852  INFO 31644 --- [restartedMain] c.k.b.BatchprogramApplication            : Starting BatchprogramApplication using Java 17.0.4.1 on DESKTOP-18053R8 with PID 31644 (C:\Users\김예슬\Documents\sts\batchprogram\bin\main started by 김예슬 in C:\Users\김예슬\Documents\sts\batchprogram)
-2022-11-29 11:32:08.853 DEBUG 31644 --- [restartedMain] c.k.b.BatchprogramApplication            : Running with Spring Boot v2.6.14-SNAPSHOT, Spring v5.3.24
-2022-11-29 11:32:08.853  INFO 31644 --- [restartedMain] c.k.b.BatchprogramApplication            : No active profile set, falling back to 1 default profile: "default"
-2022-11-29 11:32:08.903  INFO 31644 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2022-11-29 11:32:09.351  INFO 31644 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2022-11-29 11:32:09.395  INFO 31644 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 37 ms. Found 2 JPA repository interfaces.
-2022-11-29 11:32:09.702  INFO 31644 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2022-11-29 11:32:10.026  INFO 31644 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2022-11-29 11:32:10.160  INFO 31644 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2022-11-29 11:32:10.229  INFO 31644 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.14.Final
-2022-11-29 11:32:10.385  INFO 31644 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2022-11-29 11:32:10.496  INFO 31644 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
-2022-11-29 11:32:11.027  INFO 31644 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2022-11-29 11:32:11.034  INFO 31644 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2022-11-29 11:32:11.346  WARN 31644 --- [restartedMain] o.s.b.a.batch.JpaBatchConfigurer         : JPA does not support custom isolation levels, so locks may not be taken when launching Jobs
-2022-11-29 11:32:11.349  INFO 31644 --- [restartedMain] o.s.b.c.r.s.JobRepositoryFactoryBean     : No database type set, using meta data indicating: MYSQL
-2022-11-29 11:32:11.377  INFO 31644 --- [restartedMain] o.s.b.c.l.support.SimpleJobLauncher      : No TaskExecutor has been set, defaulting to synchronous executor.
-2022-11-29 11:32:11.652  INFO 31644 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2022-11-29 11:32:11.674  INFO 31644 --- [restartedMain] c.k.b.BatchprogramApplication            : Started BatchprogramApplication in 3.204 seconds (JVM running for 4.004)
-2022-11-29 11:32:11.675  INFO 31644 --- [restartedMain] o.s.b.a.b.JobLauncherApplicationRunner   : Running default command line with: [v=3, date=20221129]
-2022-11-29 11:32:11.735  INFO 31644 --- [restartedMain] o.s.b.c.l.support.SimpleJobLauncher      : Job: [SimpleJob: [name=csvToJpaJob2_batchBuild]] launched with the following parameters: [{date=20221129, v=3}]
-2022-11-29 11:32:11.769  INFO 31644 --- [restartedMain] o.s.batch.core.job.SimpleStepHandler     : Executing step: [csvToJpaJob2_batchStep1]
-2022-11-29 11:32:11.796 ERROR 31644 --- [restartedMain] o.s.batch.core.step.AbstractStep         : Encountered an error executing step csvToJpaJob2_batchStep1 in job csvToJpaJob2_batchBuild
-
-org.springframework.batch.core.step.skip.SkipLimitExceededException: Skip limit of '2' exceeded
-	at org.springframework.batch.core.step.skip.LimitCheckingItemSkipPolicy.shouldSkip(LimitCheckingItemSkipPolicy.java:133) ~[spring-batch-core-4.3.8-SNAPSHOT.jar:4.3.8-SNAPSHOT]
-	at org.springframework.batch.core.step.skip.ExceptionClassifierSkipPolicy.shouldSkip(ExceptionClassifierSkipPolicy.java:70) ~[spring-batch-core-4.3.8-SNAPSHOT.jar:4.3.8-SNAPSHOT]
-	at org.springframework.batch.core.step.item.FaultTolerantChunkProvider.shouldSkip(FaultTolerantChunkProvider.java:135) ~[spring-batch-core-4.3.8-SNAPSHOT.jar:4.3.8-SNAPSHOT]
-	at org.springframework.batch.core.step.item.FaultTolerantChunkProvider.read(FaultTolerantChunkProvider.java:91) ~[spring-batch-core-4.3.8-SNAPSHOT.jar:4.3.8-SNAPSHOT]
-	at org.springframework.batch.core.step.item.SimpleChunkProvider$1.doInIteration(SimpleChunkProvider.java:126) ~[spring-batch-core-4.3.8-SNAPSHOT.jar:4.3.8-SNAPSHOT]
-	at org.springframework.batch.repeat.support.RepeatTemplate.getNextResult(RepeatTemplate.java:375) ~[spring-batch-infrastructure-4.3.8-SNAPSHOT.jar:4.3.8-SNAPSHOT]
-	at org.springframework.batch.repeat.support.RepeatTemplate.executeInternal(RepeatTemplate.java:215) ~[spring-batch-infrastructure-4.3.8-SNAPSHOT.jar:4.3.8-SNAPSHOT]
-	at org.springframework.batch.repeat.support.RepeatTemplate.iterate(RepeatTemplate.java:145) ~[spring-batch-infrastructure-4.3.8-SNAPSHOT.jar:4.3.8-SNAPSHOT]
-	at org.springframework.batch.core.step.item.SimpleChunkProvider.provide(SimpleChunkProvider.java:118) ~[spring-batch-core-4.3.8-SNAPSHOT.jar:4.3.8-SNAPSHOT]
-	at org.springframework.batch.core.step.item.ChunkOrientedTasklet.execute(ChunkOrientedTasklet.java:71) ~[spring-batch-core-4.3.8-SNAPSHOT.jar:4.3.8-SNAPSHOT]
-	at org.springframework.batch.core.step.tasklet.TaskletStep$ChunkTransactionCallback.doInTransaction(TaskletStep.java:407) ~[spring-batch-core-4.3.8-SNAPSHOT.jar:4.3.8-SNAPSHOT]
-	at org.springframework.batch.core.step.tasklet.TaskletStep$ChunkTransactionCallback.doInTransaction(TaskletStep.java:331) ~[spring-batch-core-4.3.8-SNAPSHOT.jar:4.3.8-SNAPSHOT]
-	at org.springframework.transaction.support.TransactionTemplate.execute(TransactionTemplate.java:140) ~[spring-tx-5.3.24.jar:5.3.24]
-	at org.springframework.batch.core.step.tasklet.TaskletStep$2.doInChunkContext(TaskletStep.java:273) ~[spring-batch-core-4.3.8-SNAPSHOT.jar:4.3.8-SNAPSHOT]
-	at org.springframework.batch.core.scope.context.StepContextRepeatCallback.doInIteration(StepContextRepeatCallback.java:82) ~[spring-batch-core-4.3.8-SNAPSHOT.jar:4.3.8-SNAPSHOT]
-	at org.springframework.batch.repeat.support.RepeatTemplate.getNextResult(RepeatTemplate.java:375) ~[spring-batch-infrastructure-4.3.8-SNAPSHOT.jar:4.3.8-SNAPSHOT]
-	at org.springframework.batch.repeat.support.RepeatTemplate.executeInternal(RepeatTemplate.java:215) ~[spring-batch-infrastructure-4.3.8-SNAPSHOT.jar:4.3.8-SNAPSHOT]
-	at org.springframework.batch.repeat.support.RepeatTemplate.iterate(RepeatTemplate.java:145) ~[spring-batch-infrastructure-4.3.8-SNAPSHOT.jar:4.3.8-SNAPSHOT]
-	at org.springframework.batch.core.step.tasklet.TaskletStep.doExecute(TaskletStep.java:258) ~[spring-batch-core-4.3.8-SNAPSHOT.jar:4.3.8-SNAPSHOT]
-	at org.springframework.batch.core.step.AbstractStep.execute(AbstractStep.java:208) ~[spring-batch-core-4.3.8-SNAPSHOT.jar:4.3.8-SNAPSHOT]
-	at org.springframework.batch.core.job.SimpleStepHandler.handleStep(SimpleStepHandler.java:152) ~[spring-batch-core-4.3.8-SNAPSHOT.jar:4.3.8-SNAPSHOT]
-	at org.springframework.batch.core.job.AbstractJob.handleStep(AbstractJob.java:413) ~[spring-batch-core-4.3.8-SNAPSHOT.jar:4.3.8-SNAPSHOT]
-	at org.springframework.batch.core.job.SimpleJob.doExecute(SimpleJob.java:136) ~[spring-batch-core-4.3.8-SNAPSHOT.jar:4.3.8-SNAPSHOT]
-	at org.springframework.batch.core.job.AbstractJob.execute(AbstractJob.java:320) ~[spring-batch-core-4.3.8-SNAPSHOT.jar:4.3.8-SNAPSHOT]
-	at org.springframework.batch.core.launch.support.SimpleJobLauncher$1.run(SimpleJobLauncher.java:149) ~[spring-batch-core-4.3.8-SNAPSHOT.jar:4.3.8-SNAPSHOT]
-	at org.springframework.core.task.SyncTaskExecutor.execute(SyncTaskExecutor.java:50) ~[spring-core-5.3.24.jar:5.3.24]
-	at org.springframework.batch.core.launch.support.SimpleJobLauncher.run(SimpleJobLauncher.java:140) ~[spring-batch-core-4.3.8-SNAPSHOT.jar:4.3.8-SNAPSHOT]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
-	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344) ~[spring-aop-5.3.24.jar:5.3.24]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:198) ~[spring-aop-5.3.24.jar:5.3.24]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-5.3.24.jar:5.3.24]
-	at org.springframework.batch.core.configuration.annotation.SimpleBatchConfiguration$PassthruAdvice.invoke(SimpleBatchConfiguration.java:128) ~[spring-batch-core-4.3.8-SNAPSHOT.jar:4.3.8-SNAPSHOT]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.24.jar:5.3.24]
-	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:215) ~[spring-aop-5.3.24.jar:5.3.24]
-	at jdk.proxy4/jdk.proxy4.$Proxy85.run(Unknown Source) ~[na:na]
-	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.execute(JobLauncherApplicationRunner.java:199) ~[spring-boot-autoconfigure-2.6.14-SNAPSHOT.jar:2.6.14-SNAPSHOT]
-	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.executeLocalJobs(JobLauncherApplicationRunner.java:173) ~[spring-boot-autoconfigure-2.6.14-SNAPSHOT.jar:2.6.14-SNAPSHOT]
-	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.launchJobFromProperties(JobLauncherApplicationRunner.java:160) ~[spring-boot-autoconfigure-2.6.14-SNAPSHOT.jar:2.6.14-SNAPSHOT]
-	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.run(JobLauncherApplicationRunner.java:155) ~[spring-boot-autoconfigure-2.6.14-SNAPSHOT.jar:2.6.14-SNAPSHOT]
-	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.run(JobLauncherApplicationRunner.java:150) ~[spring-boot-autoconfigure-2.6.14-SNAPSHOT.jar:2.6.14-SNAPSHOT]
-	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:773) ~[spring-boot-2.6.14-SNAPSHOT.jar:2.6.14-SNAPSHOT]
-	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:763) ~[spring-boot-2.6.14-SNAPSHOT.jar:2.6.14-SNAPSHOT]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:314) ~[spring-boot-2.6.14-SNAPSHOT.jar:2.6.14-SNAPSHOT]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1317) ~[spring-boot-2.6.14-SNAPSHOT.jar:2.6.14-SNAPSHOT]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306) ~[spring-boot-2.6.14-SNAPSHOT.jar:2.6.14-SNAPSHOT]
-	at com.kinx.batchprogram.BatchprogramApplication.main(BatchprogramApplication.java:12) ~[main/:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
-	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) ~[spring-boot-devtools-2.6.14-SNAPSHOT.jar:2.6.14-SNAPSHOT]
-Caused by: org.springframework.batch.item.file.FlatFileParseException: Parsing error at line: 5 in resource=[file [C:\Users\김예슬\Documents\sts\batchprogram\bin\main\sample\csvToJpaJob2\3.txt]], input=[35:EE]
-	at org.springframework.batch.item.file.FlatFileItemReader.doRead(FlatFileItemReader.java:189) ~[spring-batch-infrastructure-4.3.8-SNAPSHOT.jar:4.3.8-SNAPSHOT]
-	at org.springframework.batch.item.support.AbstractItemCountingItemStreamItemReader.read(AbstractItemCountingItemStreamItemReader.java:93) ~[spring-batch-infrastructure-4.3.8-SNAPSHOT.jar:4.3.8-SNAPSHOT]
-	at org.springframework.batch.item.file.MultiResourceItemReader.readFromDelegate(MultiResourceItemReader.java:143) ~[spring-batch-infrastructure-4.3.8-SNAPSHOT.jar:4.3.8-SNAPSHOT]
-	at org.springframework.batch.item.file.MultiResourceItemReader.readNextItem(MultiResourceItemReader.java:122) ~[spring-batch-infrastructure-4.3.8-SNAPSHOT.jar:4.3.8-SNAPSHOT]
-	at org.springframework.batch.item.file.MultiResourceItemReader.read(MultiResourceItemReader.java:111) ~[spring-batch-infrastructure-4.3.8-SNAPSHOT.jar:4.3.8-SNAPSHOT]
-	at org.springframework.batch.core.step.item.SimpleChunkProvider.doRead(SimpleChunkProvider.java:99) ~[spring-batch-core-4.3.8-SNAPSHOT.jar:4.3.8-SNAPSHOT]
-	at org.springframework.batch.core.step.item.FaultTolerantChunkProvider.read(FaultTolerantChunkProvider.java:87) ~[spring-batch-core-4.3.8-SNAPSHOT.jar:4.3.8-SNAPSHOT]
-	... 50 common frames omitted
-Caused by: java.lang.ArrayIndexOutOfBoundsException: Index 1 out of bounds for length 1
-	at com.kinx.batchprogram.batch.CsvToJpaJob2.lambda$1(CsvToJpaJob2.java:96) ~[main/:na]
-	at org.springframework.batch.item.file.FlatFileItemReader.doRead(FlatFileItemReader.java:185) ~[spring-batch-infrastructure-4.3.8-SNAPSHOT.jar:4.3.8-SNAPSHOT]
-	... 56 common frames omitted
-
-2022-11-29 11:32:11.801  INFO 31644 --- [restartedMain] o.s.batch.core.step.AbstractStep         : Step: [csvToJpaJob2_batchStep1] executed in 31ms
-2022-11-29 11:32:11.813  INFO 31644 --- [restartedMain] o.s.b.c.l.support.SimpleJobLauncher      : Job: [SimpleJob: [name=csvToJpaJob2_batchBuild]] completed with the following parameters: [{date=20221129, v=3}] and the following status: [FAILED] in 57ms
-2022-11-29 11:32:11.822  WARN 31644 --- [SpringApplicationShutdownHook] o.s.b.f.support.DisposableBeanAdapter    : Custom destroy method 'close' on bean with name 'jsonJob2_jsonReader' threw an exception: org.springframework.batch.item.ItemStreamException: Error while closing item reader
-2022-11-29 11:32:11.822  WARN 31644 --- [SpringApplicationShutdownHook] o.s.b.f.support.DisposableBeanAdapter    : Custom destroy method 'close' on bean with name 'jsonJob1_jsonReader' threw an exception: org.springframework.batch.item.ItemStreamException: Error while closing item reader
-2022-11-29 11:32:11.823  INFO 31644 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2022-11-29 11:32:11.826  INFO 31644 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2022-11-29 11:32:11.834  INFO 31644 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2022-11-29 16:46:33.700  INFO 33704 --- [restartedMain] c.k.b.BatchprogramApplication            : Starting BatchprogramApplication using Java 17.0.4.1 on DESKTOP-18053R8 with PID 33704 (C:\Users\김예슬\Documents\sts\batchprogram\bin\main started by 김예슬 in C:\Users\김예슬\Documents\sts\batchprogram)
-2022-11-29 16:46:33.701 DEBUG 33704 --- [restartedMain] c.k.b.BatchprogramApplication            : Running with Spring Boot v2.6.14-SNAPSHOT, Spring v5.3.24
-2022-11-29 16:46:33.702  INFO 33704 --- [restartedMain] c.k.b.BatchprogramApplication            : No active profile set, falling back to 1 default profile: "default"
-2022-11-29 16:46:33.764  INFO 33704 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2022-11-29 16:46:34.329  INFO 33704 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2022-11-29 16:46:34.375  INFO 33704 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 38 ms. Found 2 JPA repository interfaces.
-2022-11-29 16:46:34.667  INFO 33704 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2022-11-29 16:46:35.036  INFO 33704 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2022-11-29 16:46:35.147  INFO 33704 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2022-11-29 16:46:35.212  INFO 33704 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.14.Final
-2022-11-29 16:46:35.388  INFO 33704 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2022-11-29 16:46:35.507  INFO 33704 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
-2022-11-29 16:46:36.060  INFO 33704 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2022-11-29 16:46:36.068  INFO 33704 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2022-11-29 16:46:36.429  WARN 33704 --- [restartedMain] o.s.b.a.batch.JpaBatchConfigurer         : JPA does not support custom isolation levels, so locks may not be taken when launching Jobs
-2022-11-29 16:46:36.433  INFO 33704 --- [restartedMain] o.s.b.c.r.s.JobRepositoryFactoryBean     : No database type set, using meta data indicating: MYSQL
-2022-11-29 16:46:36.463  INFO 33704 --- [restartedMain] o.s.b.c.l.support.SimpleJobLauncher      : No TaskExecutor has been set, defaulting to synchronous executor.
-2022-11-29 16:46:36.754  INFO 33704 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2022-11-29 16:46:36.771  INFO 33704 --- [restartedMain] c.k.b.BatchprogramApplication            : Started BatchprogramApplication in 3.525 seconds (JVM running for 4.406)
-2022-11-29 16:46:36.772  INFO 33704 --- [restartedMain] o.s.b.a.b.JobLauncherApplicationRunner   : Running default command line with: [v=3, date=20221129]
-2022-11-29 16:46:36.869  INFO 33704 --- [restartedMain] o.s.b.c.l.support.SimpleJobLauncher      : Job: [SimpleJob: [name=csvToJpaJob2_batchBuild]] launched with the following parameters: [{date=20221129, v=3}]
-2022-11-29 16:46:36.918  INFO 33704 --- [restartedMain] o.s.batch.core.job.SimpleStepHandler     : Executing step: [csvToJpaJob2_batchStep1]
-2022-11-29 16:46:36.945 ERROR 33704 --- [restartedMain] o.s.batch.core.step.AbstractStep         : Encountered an error executing step csvToJpaJob2_batchStep1 in job csvToJpaJob2_batchBuild
-
-org.springframework.batch.core.step.skip.SkipLimitExceededException: Skip limit of '2' exceeded
-	at org.springframework.batch.core.step.skip.LimitCheckingItemSkipPolicy.shouldSkip(LimitCheckingItemSkipPolicy.java:133) ~[spring-batch-core-4.3.8-SNAPSHOT.jar:4.3.8-SNAPSHOT]
-	at org.springframework.batch.core.step.skip.ExceptionClassifierSkipPolicy.shouldSkip(ExceptionClassifierSkipPolicy.java:70) ~[spring-batch-core-4.3.8-SNAPSHOT.jar:4.3.8-SNAPSHOT]
-	at org.springframework.batch.core.step.item.FaultTolerantChunkProvider.shouldSkip(FaultTolerantChunkProvider.java:135) ~[spring-batch-core-4.3.8-SNAPSHOT.jar:4.3.8-SNAPSHOT]
-	at org.springframework.batch.core.step.item.FaultTolerantChunkProvider.read(FaultTolerantChunkProvider.java:91) ~[spring-batch-core-4.3.8-SNAPSHOT.jar:4.3.8-SNAPSHOT]
-	at org.springframework.batch.core.step.item.SimpleChunkProvider$1.doInIteration(SimpleChunkProvider.java:126) ~[spring-batch-core-4.3.8-SNAPSHOT.jar:4.3.8-SNAPSHOT]
-	at org.springframework.batch.repeat.support.RepeatTemplate.getNextResult(RepeatTemplate.java:375) ~[spring-batch-infrastructure-4.3.8-SNAPSHOT.jar:4.3.8-SNAPSHOT]
-	at org.springframework.batch.repeat.support.RepeatTemplate.executeInternal(RepeatTemplate.java:215) ~[spring-batch-infrastructure-4.3.8-SNAPSHOT.jar:4.3.8-SNAPSHOT]
-	at org.springframework.batch.repeat.support.RepeatTemplate.iterate(RepeatTemplate.java:145) ~[spring-batch-infrastructure-4.3.8-SNAPSHOT.jar:4.3.8-SNAPSHOT]
-	at org.springframework.batch.core.step.item.SimpleChunkProvider.provide(SimpleChunkProvider.java:118) ~[spring-batch-core-4.3.8-SNAPSHOT.jar:4.3.8-SNAPSHOT]
-	at org.springframework.batch.core.step.item.ChunkOrientedTasklet.execute(ChunkOrientedTasklet.java:71) ~[spring-batch-core-4.3.8-SNAPSHOT.jar:4.3.8-SNAPSHOT]
-	at org.springframework.batch.core.step.tasklet.TaskletStep$ChunkTransactionCallback.doInTransaction(TaskletStep.java:407) ~[spring-batch-core-4.3.8-SNAPSHOT.jar:4.3.8-SNAPSHOT]
-	at org.springframework.batch.core.step.tasklet.TaskletStep$ChunkTransactionCallback.doInTransaction(TaskletStep.java:331) ~[spring-batch-core-4.3.8-SNAPSHOT.jar:4.3.8-SNAPSHOT]
-	at org.springframework.transaction.support.TransactionTemplate.execute(TransactionTemplate.java:140) ~[spring-tx-5.3.24.jar:5.3.24]
-	at org.springframework.batch.core.step.tasklet.TaskletStep$2.doInChunkContext(TaskletStep.java:273) ~[spring-batch-core-4.3.8-SNAPSHOT.jar:4.3.8-SNAPSHOT]
-	at org.springframework.batch.core.scope.context.StepContextRepeatCallback.doInIteration(StepContextRepeatCallback.java:82) ~[spring-batch-core-4.3.8-SNAPSHOT.jar:4.3.8-SNAPSHOT]
-	at org.springframework.batch.repeat.support.RepeatTemplate.getNextResult(RepeatTemplate.java:375) ~[spring-batch-infrastructure-4.3.8-SNAPSHOT.jar:4.3.8-SNAPSHOT]
-	at org.springframework.batch.repeat.support.RepeatTemplate.executeInternal(RepeatTemplate.java:215) ~[spring-batch-infrastructure-4.3.8-SNAPSHOT.jar:4.3.8-SNAPSHOT]
-	at org.springframework.batch.repeat.support.RepeatTemplate.iterate(RepeatTemplate.java:145) ~[spring-batch-infrastructure-4.3.8-SNAPSHOT.jar:4.3.8-SNAPSHOT]
-	at org.springframework.batch.core.step.tasklet.TaskletStep.doExecute(TaskletStep.java:258) ~[spring-batch-core-4.3.8-SNAPSHOT.jar:4.3.8-SNAPSHOT]
-	at org.springframework.batch.core.step.AbstractStep.execute(AbstractStep.java:208) ~[spring-batch-core-4.3.8-SNAPSHOT.jar:4.3.8-SNAPSHOT]
-	at org.springframework.batch.core.job.SimpleStepHandler.handleStep(SimpleStepHandler.java:152) ~[spring-batch-core-4.3.8-SNAPSHOT.jar:4.3.8-SNAPSHOT]
-	at org.springframework.batch.core.job.AbstractJob.handleStep(AbstractJob.java:413) ~[spring-batch-core-4.3.8-SNAPSHOT.jar:4.3.8-SNAPSHOT]
-	at org.springframework.batch.core.job.SimpleJob.doExecute(SimpleJob.java:136) ~[spring-batch-core-4.3.8-SNAPSHOT.jar:4.3.8-SNAPSHOT]
-	at org.springframework.batch.core.job.AbstractJob.execute(AbstractJob.java:320) ~[spring-batch-core-4.3.8-SNAPSHOT.jar:4.3.8-SNAPSHOT]
-	at org.springframework.batch.core.launch.support.SimpleJobLauncher$1.run(SimpleJobLauncher.java:149) ~[spring-batch-core-4.3.8-SNAPSHOT.jar:4.3.8-SNAPSHOT]
-	at org.springframework.core.task.SyncTaskExecutor.execute(SyncTaskExecutor.java:50) ~[spring-core-5.3.24.jar:5.3.24]
-	at org.springframework.batch.core.launch.support.SimpleJobLauncher.run(SimpleJobLauncher.java:140) ~[spring-batch-core-4.3.8-SNAPSHOT.jar:4.3.8-SNAPSHOT]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
-	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344) ~[spring-aop-5.3.24.jar:5.3.24]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:198) ~[spring-aop-5.3.24.jar:5.3.24]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-5.3.24.jar:5.3.24]
-	at org.springframework.batch.core.configuration.annotation.SimpleBatchConfiguration$PassthruAdvice.invoke(SimpleBatchConfiguration.java:128) ~[spring-batch-core-4.3.8-SNAPSHOT.jar:4.3.8-SNAPSHOT]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.24.jar:5.3.24]
-	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:215) ~[spring-aop-5.3.24.jar:5.3.24]
-	at jdk.proxy4/jdk.proxy4.$Proxy85.run(Unknown Source) ~[na:na]
-	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.execute(JobLauncherApplicationRunner.java:199) ~[spring-boot-autoconfigure-2.6.14-SNAPSHOT.jar:2.6.14-SNAPSHOT]
-	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.executeLocalJobs(JobLauncherApplicationRunner.java:173) ~[spring-boot-autoconfigure-2.6.14-SNAPSHOT.jar:2.6.14-SNAPSHOT]
-	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.launchJobFromProperties(JobLauncherApplicationRunner.java:160) ~[spring-boot-autoconfigure-2.6.14-SNAPSHOT.jar:2.6.14-SNAPSHOT]
-	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.run(JobLauncherApplicationRunner.java:155) ~[spring-boot-autoconfigure-2.6.14-SNAPSHOT.jar:2.6.14-SNAPSHOT]
-	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.run(JobLauncherApplicationRunner.java:150) ~[spring-boot-autoconfigure-2.6.14-SNAPSHOT.jar:2.6.14-SNAPSHOT]
-	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:773) ~[spring-boot-2.6.14-SNAPSHOT.jar:2.6.14-SNAPSHOT]
-	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:763) ~[spring-boot-2.6.14-SNAPSHOT.jar:2.6.14-SNAPSHOT]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:314) ~[spring-boot-2.6.14-SNAPSHOT.jar:2.6.14-SNAPSHOT]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1317) ~[spring-boot-2.6.14-SNAPSHOT.jar:2.6.14-SNAPSHOT]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306) ~[spring-boot-2.6.14-SNAPSHOT.jar:2.6.14-SNAPSHOT]
-	at com.kinx.batchprogram.BatchprogramApplication.main(BatchprogramApplication.java:12) ~[main/:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
-	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) ~[spring-boot-devtools-2.6.14-SNAPSHOT.jar:2.6.14-SNAPSHOT]
-Caused by: org.springframework.batch.item.file.FlatFileParseException: Parsing error at line: 5 in resource=[file [C:\Users\김예슬\Documents\sts\batchprogram\bin\main\sample\csvToJpaJob2\3.txt]], input=[35:EE]
-	at org.springframework.batch.item.file.FlatFileItemReader.doRead(FlatFileItemReader.java:189) ~[spring-batch-infrastructure-4.3.8-SNAPSHOT.jar:4.3.8-SNAPSHOT]
-	at org.springframework.batch.item.support.AbstractItemCountingItemStreamItemReader.read(AbstractItemCountingItemStreamItemReader.java:93) ~[spring-batch-infrastructure-4.3.8-SNAPSHOT.jar:4.3.8-SNAPSHOT]
-	at org.springframework.batch.item.file.MultiResourceItemReader.readFromDelegate(MultiResourceItemReader.java:143) ~[spring-batch-infrastructure-4.3.8-SNAPSHOT.jar:4.3.8-SNAPSHOT]
-	at org.springframework.batch.item.file.MultiResourceItemReader.readNextItem(MultiResourceItemReader.java:122) ~[spring-batch-infrastructure-4.3.8-SNAPSHOT.jar:4.3.8-SNAPSHOT]
-	at org.springframework.batch.item.file.MultiResourceItemReader.read(MultiResourceItemReader.java:111) ~[spring-batch-infrastructure-4.3.8-SNAPSHOT.jar:4.3.8-SNAPSHOT]
-	at org.springframework.batch.core.step.item.SimpleChunkProvider.doRead(SimpleChunkProvider.java:99) ~[spring-batch-core-4.3.8-SNAPSHOT.jar:4.3.8-SNAPSHOT]
-	at org.springframework.batch.core.step.item.FaultTolerantChunkProvider.read(FaultTolerantChunkProvider.java:87) ~[spring-batch-core-4.3.8-SNAPSHOT.jar:4.3.8-SNAPSHOT]
-	... 50 common frames omitted
-Caused by: java.lang.ArrayIndexOutOfBoundsException: Index 1 out of bounds for length 1
-	at com.kinx.batchprogram.batch.CsvToJpaJob2.lambda$1(CsvToJpaJob2.java:96) ~[main/:na]
-	at org.springframework.batch.item.file.FlatFileItemReader.doRead(FlatFileItemReader.java:185) ~[spring-batch-infrastructure-4.3.8-SNAPSHOT.jar:4.3.8-SNAPSHOT]
-	... 56 common frames omitted
-
-2022-11-29 16:46:36.949  INFO 33704 --- [restartedMain] o.s.batch.core.step.AbstractStep         : Step: [csvToJpaJob2_batchStep1] executed in 31ms
-2022-11-29 16:46:36.965  INFO 33704 --- [restartedMain] o.s.b.c.l.support.SimpleJobLauncher      : Job: [SimpleJob: [name=csvToJpaJob2_batchBuild]] completed with the following parameters: [{date=20221129, v=3}] and the following status: [FAILED] in 70ms
-2022-11-29 16:46:36.973  WARN 33704 --- [SpringApplicationShutdownHook] o.s.b.f.support.DisposableBeanAdapter    : Custom destroy method 'close' on bean with name 'jsonJob2_jsonReader' threw an exception: org.springframework.batch.item.ItemStreamException: Error while closing item reader
-2022-11-29 16:46:36.973  WARN 33704 --- [SpringApplicationShutdownHook] o.s.b.f.support.DisposableBeanAdapter    : Custom destroy method 'close' on bean with name 'jsonJob1_jsonReader' threw an exception: org.springframework.batch.item.ItemStreamException: Error while closing item reader
-2022-11-29 16:46:36.974  INFO 33704 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2022-11-29 16:46:36.978  INFO 33704 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2022-11-29 16:46:36.987  INFO 33704 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2022-11-29 16:46:50.933  INFO 21796 --- [restartedMain] c.k.b.BatchprogramApplication            : Starting BatchprogramApplication using Java 17.0.4.1 on DESKTOP-18053R8 with PID 21796 (C:\Users\김예슬\Documents\sts\batchprogram\bin\main started by 김예슬 in C:\Users\김예슬\Documents\sts\batchprogram)
-2022-11-29 16:46:50.935 DEBUG 21796 --- [restartedMain] c.k.b.BatchprogramApplication            : Running with Spring Boot v2.6.14-SNAPSHOT, Spring v5.3.24
-2022-11-29 16:46:50.935  INFO 21796 --- [restartedMain] c.k.b.BatchprogramApplication            : No active profile set, falling back to 1 default profile: "default"
-2022-11-29 16:46:50.984  INFO 21796 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2022-11-29 16:46:51.429  INFO 21796 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2022-11-29 16:46:51.474  INFO 21796 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 38 ms. Found 2 JPA repository interfaces.
-2022-11-29 16:46:51.751  INFO 21796 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2022-11-29 16:46:52.036  INFO 21796 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2022-11-29 16:46:52.152  INFO 21796 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2022-11-29 16:46:52.214  INFO 21796 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.14.Final
-2022-11-29 16:46:52.381  INFO 21796 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2022-11-29 16:46:52.488  INFO 21796 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
-2022-11-29 16:46:53.063  INFO 21796 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2022-11-29 16:46:53.073  INFO 21796 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2022-11-29 16:46:53.406  WARN 21796 --- [restartedMain] o.s.b.a.batch.JpaBatchConfigurer         : JPA does not support custom isolation levels, so locks may not be taken when launching Jobs
-2022-11-29 16:46:53.409  INFO 21796 --- [restartedMain] o.s.b.c.r.s.JobRepositoryFactoryBean     : No database type set, using meta data indicating: MYSQL
-2022-11-29 16:46:53.434  INFO 21796 --- [restartedMain] o.s.b.c.l.support.SimpleJobLauncher      : No TaskExecutor has been set, defaulting to synchronous executor.
-2022-11-29 16:46:53.716  INFO 21796 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2022-11-29 16:46:53.736  INFO 21796 --- [restartedMain] c.k.b.BatchprogramApplication            : Started BatchprogramApplication in 3.174 seconds (JVM running for 3.963)
-2022-11-29 16:46:53.737  INFO 21796 --- [restartedMain] o.s.b.a.b.JobLauncherApplicationRunner   : Running default command line with: [v=3, date=20221129]
-2022-11-29 16:46:53.834  INFO 21796 --- [restartedMain] o.s.b.c.l.support.SimpleJobLauncher      : Job: [SimpleJob: [name=csvToJpaJob2_batchBuild]] launched with the following parameters: [{date=20221129, v=3}]
-2022-11-29 16:46:53.880  INFO 21796 --- [restartedMain] o.s.batch.core.job.SimpleStepHandler     : Executing step: [csvToJpaJob2_batchStep1]
-2022-11-29 16:46:53.970  INFO 21796 --- [restartedMain] o.s.batch.core.step.AbstractStep         : Step: [csvToJpaJob2_batchStep1] executed in 89ms
-2022-11-29 16:46:53.984  INFO 21796 --- [restartedMain] o.s.b.c.l.support.SimpleJobLauncher      : Job: [SimpleJob: [name=csvToJpaJob2_batchBuild]] completed with the following parameters: [{date=20221129, v=3}] and the following status: [COMPLETED] in 126ms
-2022-11-29 16:46:53.992  WARN 21796 --- [SpringApplicationShutdownHook] o.s.b.f.support.DisposableBeanAdapter    : Custom destroy method 'close' on bean with name 'jsonJob2_jsonReader' threw an exception: org.springframework.batch.item.ItemStreamException: Error while closing item reader
-2022-11-29 16:46:53.992  WARN 21796 --- [SpringApplicationShutdownHook] o.s.b.f.support.DisposableBeanAdapter    : Custom destroy method 'close' on bean with name 'jsonJob1_jsonReader' threw an exception: org.springframework.batch.item.ItemStreamException: Error while closing item reader
-2022-11-29 16:46:53.993  INFO 21796 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2022-11-29 16:46:53.996  INFO 21796 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2022-11-29 16:46:54.005  INFO 21796 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2022-11-29 16:47:02.367  INFO 21484 --- [restartedMain] c.k.b.BatchprogramApplication            : Starting BatchprogramApplication using Java 17.0.4.1 on DESKTOP-18053R8 with PID 21484 (C:\Users\김예슬\Documents\sts\batchprogram\bin\main started by 김예슬 in C:\Users\김예슬\Documents\sts\batchprogram)
-2022-11-29 16:47:02.367 DEBUG 21484 --- [restartedMain] c.k.b.BatchprogramApplication            : Running with Spring Boot v2.6.14-SNAPSHOT, Spring v5.3.24
-2022-11-29 16:47:02.368  INFO 21484 --- [restartedMain] c.k.b.BatchprogramApplication            : No active profile set, falling back to 1 default profile: "default"
-2022-11-29 16:47:02.414  INFO 21484 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2022-11-29 16:47:02.873  INFO 21484 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2022-11-29 16:47:02.917  INFO 21484 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 37 ms. Found 2 JPA repository interfaces.
-2022-11-29 16:47:03.201  INFO 21484 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2022-11-29 16:47:03.493  INFO 21484 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2022-11-29 16:47:03.608  INFO 21484 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2022-11-29 16:47:03.668  INFO 21484 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.14.Final
-2022-11-29 16:47:03.838  INFO 21484 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2022-11-29 16:47:03.947  INFO 21484 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
-2022-11-29 16:47:04.495  INFO 21484 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2022-11-29 16:47:04.505  INFO 21484 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2022-11-29 16:47:04.848  WARN 21484 --- [restartedMain] o.s.b.a.batch.JpaBatchConfigurer         : JPA does not support custom isolation levels, so locks may not be taken when launching Jobs
-2022-11-29 16:47:04.851  INFO 21484 --- [restartedMain] o.s.b.c.r.s.JobRepositoryFactoryBean     : No database type set, using meta data indicating: MYSQL
-2022-11-29 16:47:04.878  INFO 21484 --- [restartedMain] o.s.b.c.l.support.SimpleJobLauncher      : No TaskExecutor has been set, defaulting to synchronous executor.
-2022-11-29 16:47:05.153  INFO 21484 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2022-11-29 16:47:05.171  INFO 21484 --- [restartedMain] c.k.b.BatchprogramApplication            : Started BatchprogramApplication in 3.196 seconds (JVM running for 3.946)
-2022-11-29 16:47:05.172  INFO 21484 --- [restartedMain] o.s.b.a.b.JobLauncherApplicationRunner   : Running default command line with: [v=3, date=20221129]
-2022-11-29 16:47:05.249  INFO 21484 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
+2022-11-30 16:26:43.403  INFO 30916 --- [restartedMain] c.k.b.BatchprogramApplication            : Starting BatchprogramApplication using Java 11.0.16 on DESKTOP-18053R8 with PID 30916 (C:\Users\김예슬\Documents\sts\batchprogram\build\classes\java\main started by 김예슬 in C:\Users\김예슬\Documents\sts\batchprogram)
+2022-11-30 16:26:43.411 DEBUG 30916 --- [restartedMain] c.k.b.BatchprogramApplication            : Running with Spring Boot v2.6.14-SNAPSHOT, Spring v5.3.24
+2022-11-30 16:26:43.411  INFO 30916 --- [restartedMain] c.k.b.BatchprogramApplication            : No active profile set, falling back to 1 default profile: "default"
+2022-11-30 16:26:43.471  INFO 30916 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-11-30 16:26:44.198  INFO 30916 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-11-30 16:26:44.279  INFO 30916 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 68 ms. Found 3 JPA repository interfaces.
+2022-11-30 16:26:44.641  INFO 30916 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-11-30 16:26:44.996  INFO 30916 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-11-30 16:26:45.145  INFO 30916 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-11-30 16:26:45.232  INFO 30916 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.14.Final
+2022-11-30 16:26:45.429  INFO 30916 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-11-30 16:26:45.584  INFO 30916 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2022-11-30 16:26:45.723 ERROR 30916 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Failed to initialize JPA EntityManagerFactory: No identifier specified for entity: com.kinx.batchprogram.domain.Two
+2022-11-30 16:26:45.723  WARN 30916 --- [restartedMain] s.c.a.AnnotationConfigApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is org.hibernate.AnnotationException: No identifier specified for entity: com.kinx.batchprogram.domain.Two
+2022-11-30 16:26:45.725  INFO 30916 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-11-30 16:26:45.736  INFO 30916 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-11-30 16:26:45.743  INFO 30916 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
 
 Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
-2022-11-29 16:47:05.273 ERROR 21484 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+2022-11-30 16:26:45.779 ERROR 30916 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
 
-java.lang.IllegalStateException: Failed to execute ApplicationRunner
-	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:776) ~[spring-boot-2.6.14-SNAPSHOT.jar:2.6.14-SNAPSHOT]
-	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:763) ~[spring-boot-2.6.14-SNAPSHOT.jar:2.6.14-SNAPSHOT]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:314) ~[spring-boot-2.6.14-SNAPSHOT.jar:2.6.14-SNAPSHOT]
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is org.hibernate.AnnotationException: No identifier specified for entity: com.kinx.batchprogram.domain.Two
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1804) ~[spring-beans-5.3.24.jar:5.3.24]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620) ~[spring-beans-5.3.24.jar:5.3.24]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.24.jar:5.3.24]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.24.jar:5.3.24]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.24.jar:5.3.24]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.24.jar:5.3.24]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.24.jar:5.3.24]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1154) ~[spring-context-5.3.24.jar:5.3.24]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:908) ~[spring-context-5.3.24.jar:5.3.24]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) ~[spring-context-5.3.24.jar:5.3.24]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:745) ~[spring-boot-2.6.14-SNAPSHOT.jar:2.6.14-SNAPSHOT]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:423) ~[spring-boot-2.6.14-SNAPSHOT.jar:2.6.14-SNAPSHOT]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307) ~[spring-boot-2.6.14-SNAPSHOT.jar:2.6.14-SNAPSHOT]
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1317) ~[spring-boot-2.6.14-SNAPSHOT.jar:2.6.14-SNAPSHOT]
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306) ~[spring-boot-2.6.14-SNAPSHOT.jar:2.6.14-SNAPSHOT]
 	at com.kinx.batchprogram.BatchprogramApplication.main(BatchprogramApplication.java:12) ~[main/:na]
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]
 	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) ~[spring-boot-devtools-2.6.14-SNAPSHOT.jar:2.6.14-SNAPSHOT]
-Caused by: org.springframework.batch.core.repository.JobInstanceAlreadyCompleteException: A job instance already exists and is complete for parameters={date=20221129, v=3}.  If you want to run this job again, change the parameters.
-	at org.springframework.batch.core.repository.support.SimpleJobRepository.createJobExecution(SimpleJobRepository.java:139) ~[spring-batch-core-4.3.8-SNAPSHOT.jar:4.3.8-SNAPSHOT]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
-	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344) ~[spring-aop-5.3.24.jar:5.3.24]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:198) ~[spring-aop-5.3.24.jar:5.3.24]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-5.3.24.jar:5.3.24]
-	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123) ~[spring-tx-5.3.24.jar:5.3.24]
-	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:388) ~[spring-tx-5.3.24.jar:5.3.24]
-	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119) ~[spring-tx-5.3.24.jar:5.3.24]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.24.jar:5.3.24]
-	at org.springframework.batch.core.repository.support.AbstractJobRepositoryFactoryBean$1.invoke(AbstractJobRepositoryFactoryBean.java:181) ~[spring-batch-core-4.3.8-SNAPSHOT.jar:4.3.8-SNAPSHOT]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.24.jar:5.3.24]
-	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:215) ~[spring-aop-5.3.24.jar:5.3.24]
-	at jdk.proxy2/jdk.proxy2.$Proxy90.createJobExecution(Unknown Source) ~[na:na]
-	at org.springframework.batch.core.launch.support.SimpleJobLauncher.run(SimpleJobLauncher.java:137) ~[spring-batch-core-4.3.8-SNAPSHOT.jar:4.3.8-SNAPSHOT]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
-	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344) ~[spring-aop-5.3.24.jar:5.3.24]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:198) ~[spring-aop-5.3.24.jar:5.3.24]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-5.3.24.jar:5.3.24]
-	at org.springframework.batch.core.configuration.annotation.SimpleBatchConfiguration$PassthruAdvice.invoke(SimpleBatchConfiguration.java:128) ~[spring-batch-core-4.3.8-SNAPSHOT.jar:4.3.8-SNAPSHOT]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.24.jar:5.3.24]
-	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:215) ~[spring-aop-5.3.24.jar:5.3.24]
-	at jdk.proxy4/jdk.proxy4.$Proxy85.run(Unknown Source) ~[na:na]
-	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.execute(JobLauncherApplicationRunner.java:199) ~[spring-boot-autoconfigure-2.6.14-SNAPSHOT.jar:2.6.14-SNAPSHOT]
-	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.executeLocalJobs(JobLauncherApplicationRunner.java:173) ~[spring-boot-autoconfigure-2.6.14-SNAPSHOT.jar:2.6.14-SNAPSHOT]
-	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.launchJobFromProperties(JobLauncherApplicationRunner.java:160) ~[spring-boot-autoconfigure-2.6.14-SNAPSHOT.jar:2.6.14-SNAPSHOT]
-	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.run(JobLauncherApplicationRunner.java:155) ~[spring-boot-autoconfigure-2.6.14-SNAPSHOT.jar:2.6.14-SNAPSHOT]
-	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.run(JobLauncherApplicationRunner.java:150) ~[spring-boot-autoconfigure-2.6.14-SNAPSHOT.jar:2.6.14-SNAPSHOT]
-	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:773) ~[spring-boot-2.6.14-SNAPSHOT.jar:2.6.14-SNAPSHOT]
-	... 10 common frames omitted
+Caused by: org.hibernate.AnnotationException: No identifier specified for entity: com.kinx.batchprogram.domain.Two
+	at org.hibernate.cfg.InheritanceState.determineDefaultAccessType(InheritanceState.java:266) ~[hibernate-core-5.6.14.Final.jar:5.6.14.Final]
+	at org.hibernate.cfg.InheritanceState.getElementsToProcess(InheritanceState.java:211) ~[hibernate-core-5.6.14.Final.jar:5.6.14.Final]
+	at org.hibernate.cfg.AnnotationBinder.bindClass(AnnotationBinder.java:772) ~[hibernate-core-5.6.14.Final.jar:5.6.14.Final]
+	at org.hibernate.boot.model.source.internal.annotations.AnnotationMetadataSourceProcessorImpl.processEntityHierarchies(AnnotationMetadataSourceProcessorImpl.java:225) ~[hibernate-core-5.6.14.Final.jar:5.6.14.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess$1.processEntityHierarchies(MetadataBuildingProcess.java:239) ~[hibernate-core-5.6.14.Final.jar:5.6.14.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:282) ~[hibernate-core-5.6.14.Final.jar:5.6.14.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1460) ~[hibernate-core-5.6.14.Final.jar:5.6.14.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1494) ~[hibernate-core-5.6.14.Final.jar:5.6.14.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58) ~[spring-orm-5.3.24.jar:5.3.24]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365) ~[spring-orm-5.3.24.jar:5.3.24]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409) ~[spring-orm-5.3.24.jar:5.3.24]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396) ~[spring-orm-5.3.24.jar:5.3.24]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341) ~[spring-orm-5.3.24.jar:5.3.24]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863) ~[spring-beans-5.3.24.jar:5.3.24]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800) ~[spring-beans-5.3.24.jar:5.3.24]
+	... 20 common frames omitted
 
-2022-11-29 16:47:05.277  WARN 21484 --- [restartedMain] o.s.b.f.support.DisposableBeanAdapter    : Custom destroy method 'close' on bean with name 'jsonJob2_jsonReader' threw an exception: org.springframework.batch.item.ItemStreamException: Error while closing item reader
-2022-11-29 16:47:05.277  WARN 21484 --- [restartedMain] o.s.b.f.support.DisposableBeanAdapter    : Custom destroy method 'close' on bean with name 'jsonJob1_jsonReader' threw an exception: org.springframework.batch.item.ItemStreamException: Error while closing item reader
-2022-11-29 16:47:05.278  INFO 21484 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2022-11-29 16:47:05.282  INFO 21484 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2022-11-29 16:47:05.294  INFO 21484 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-11-30 16:27:53.556  INFO 32104 --- [restartedMain] c.k.b.BatchprogramApplication            : Starting BatchprogramApplication using Java 11.0.16 on DESKTOP-18053R8 with PID 32104 (C:\Users\김예슬\Documents\sts\batchprogram\build\classes\java\main started by 김예슬 in C:\Users\김예슬\Documents\sts\batchprogram)
+2022-11-30 16:27:53.557 DEBUG 32104 --- [restartedMain] c.k.b.BatchprogramApplication            : Running with Spring Boot v2.6.14-SNAPSHOT, Spring v5.3.24
+2022-11-30 16:27:53.557  INFO 32104 --- [restartedMain] c.k.b.BatchprogramApplication            : No active profile set, falling back to 1 default profile: "default"
+2022-11-30 16:27:53.610  INFO 32104 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-11-30 16:27:54.168  INFO 32104 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-11-30 16:27:54.227  INFO 32104 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 51 ms. Found 3 JPA repository interfaces.
+2022-11-30 16:27:54.514  INFO 32104 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-11-30 16:27:54.755  INFO 32104 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-11-30 16:27:54.860  INFO 32104 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-11-30 16:27:54.919  INFO 32104 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.14.Final
+2022-11-30 16:27:55.088  INFO 32104 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-11-30 16:27:55.193  INFO 32104 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2022-11-30 16:27:55.879  INFO 32104 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-11-30 16:27:55.888  INFO 32104 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-11-30 16:27:56.212  WARN 32104 --- [restartedMain] o.s.b.a.batch.JpaBatchConfigurer         : JPA does not support custom isolation levels, so locks may not be taken when launching Jobs
+2022-11-30 16:27:56.216  INFO 32104 --- [restartedMain] o.s.b.c.r.s.JobRepositoryFactoryBean     : No database type set, using meta data indicating: MYSQL
+2022-11-30 16:27:56.243  INFO 32104 --- [restartedMain] o.s.b.c.l.support.SimpleJobLauncher      : No TaskExecutor has been set, defaulting to synchronous executor.
+2022-11-30 16:27:56.578  INFO 32104 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-11-30 16:27:56.599  INFO 32104 --- [restartedMain] c.k.b.BatchprogramApplication            : Started BatchprogramApplication in 3.46 seconds (JVM running for 4.939)
+2022-11-30 16:27:56.601  INFO 32104 --- [restartedMain] o.s.b.a.b.JobLauncherApplicationRunner   : Running default command line with: [inFileName=INFILES/CsvToJpaJob3.txt, date=20221129]
+2022-11-30 16:27:56.679  INFO 32104 --- [restartedMain] o.s.b.c.l.support.SimpleJobLauncher      : Job: [SimpleJob: [name=CsvToJpaJob3]] launched with the following parameters: [{date=20221129, inFileName=INFILES/CsvToJpaJob3.txt}]
+2022-11-30 16:27:56.725  INFO 32104 --- [restartedMain] o.s.batch.core.job.SimpleStepHandler     : Executing step: [CsvToJpaJob3_batchStep1]
+2022-11-30 16:27:56.856  INFO 32104 --- [restartedMain] o.s.batch.core.step.AbstractStep         : Step: [CsvToJpaJob3_batchStep1] executed in 129ms
+2022-11-30 16:27:56.869  INFO 32104 --- [restartedMain] o.s.b.c.l.support.SimpleJobLauncher      : Job: [SimpleJob: [name=CsvToJpaJob3]] completed with the following parameters: [{date=20221129, inFileName=INFILES/CsvToJpaJob3.txt}] and the following status: [COMPLETED] in 160ms
+2022-11-30 16:27:56.879  WARN 32104 --- [SpringApplicationShutdownHook] o.s.b.f.support.DisposableBeanAdapter    : Custom destroy method 'close' on bean with name 'jsonJob2_jsonReader' threw an exception: org.springframework.batch.item.ItemStreamException: Error while closing item reader
+2022-11-30 16:27:56.879  WARN 32104 --- [SpringApplicationShutdownHook] o.s.b.f.support.DisposableBeanAdapter    : Custom destroy method 'close' on bean with name 'jsonJob1_jsonReader' threw an exception: org.springframework.batch.item.ItemStreamException: Error while closing item reader
+2022-11-30 16:27:56.881  INFO 32104 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-11-30 16:27:56.884  INFO 32104 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-11-30 16:27:56.895  INFO 32104 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-11-30 16:30:58.320  INFO 31524 --- [Test worker] c.k.b.BatchprogramApplicationTests       : Starting BatchprogramApplicationTests using Java 11.0.16 on DESKTOP-18053R8 with PID 31524 (started by �迹�� in C:\Users\�迹��\Documents\sts\batchprogram)
+2022-11-30 16:30:58.322 DEBUG 31524 --- [Test worker] c.k.b.BatchprogramApplicationTests       : Running with Spring Boot v2.6.14-SNAPSHOT, Spring v5.3.24
+2022-11-30 16:30:58.322  INFO 31524 --- [Test worker] c.k.b.BatchprogramApplicationTests       : No active profile set, falling back to 1 default profile: "default"
+2022-11-30 16:30:59.030  INFO 31524 --- [Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-11-30 16:30:59.131  INFO 31524 --- [Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 88 ms. Found 3 JPA repository interfaces.
+2022-11-30 16:30:59.713  INFO 31524 --- [Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-11-30 16:31:00.132  INFO 31524 --- [Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-11-30 16:31:00.397  INFO 31524 --- [Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-11-30 16:31:00.503  INFO 31524 --- [Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.14.Final
+2022-11-30 16:31:00.804  INFO 31524 --- [Test worker] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-11-30 16:31:00.973  INFO 31524 --- [Test worker] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2022-11-30 16:31:01.804  INFO 31524 --- [Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-11-30 16:31:01.817  INFO 31524 --- [Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-11-30 16:31:02.776  WARN 31524 --- [Test worker] o.s.b.a.batch.JpaBatchConfigurer         : JPA does not support custom isolation levels, so locks may not be taken when launching Jobs
+2022-11-30 16:31:02.782  INFO 31524 --- [Test worker] o.s.b.c.r.s.JobRepositoryFactoryBean     : No database type set, using meta data indicating: MYSQL
+2022-11-30 16:31:02.825  INFO 31524 --- [Test worker] o.s.b.c.l.support.SimpleJobLauncher      : No TaskExecutor has been set, defaulting to synchronous executor.
+2022-11-30 16:31:03.414  INFO 31524 --- [Test worker] c.k.b.BatchprogramApplicationTests       : Started BatchprogramApplicationTests in 5.541 seconds (JVM running for 7.914)
+2022-11-30 16:31:03.417  INFO 31524 --- [Test worker] o.s.b.a.b.JobLauncherApplicationRunner   : Running default command line with: []
+2022-11-30 16:31:03.606  INFO 31524 --- [Test worker] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.kinx.batchprogram.domain.TestDeptRepository], using SpringBootContextLoader
+2022-11-30 16:31:03.607  INFO 31524 --- [Test worker] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [com.kinx.batchprogram.domain.TestDeptRepository]: no resource found for suffixes {-context.xml, Context.groovy}.
+2022-11-30 16:31:03.608  INFO 31524 --- [Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.kinx.batchprogram.domain.TestDeptRepository]: TestDeptRepository does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2022-11-30 16:31:03.619  INFO 31524 --- [Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.kinx.batchprogram.BatchprogramApplication for test class com.kinx.batchprogram.domain.TestDeptRepository
+2022-11-30 16:31:03.622  INFO 31524 --- [Test worker] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2022-11-30 16:31:03.623  INFO 31524 --- [Test worker] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@63ede2a0, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@57df93c1, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@72998021, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@761a0bbd, org.springframework.test.context.support.DirtiesContextTestExecutionListener@7a6e0f3c, org.springframework.test.context.transaction.TransactionalTestExecutionListener@5184da2b, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@6fa2d0b2, org.springframework.test.context.event.EventPublishingTestExecutionListener@49c37918, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@43de88f3, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@347c5721, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@4d22265c, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@1f7b8d59, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@28551755, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@7ec68821]
+2022-11-30 16:31:04.072  WARN 31524 --- [SpringApplicationShutdownHook] o.s.b.f.support.DisposableBeanAdapter    : Custom destroy method 'close' on bean with name 'jsonJob2_jsonReader' threw an exception: org.springframework.batch.item.ItemStreamException: Error while closing item reader
+2022-11-30 16:31:04.073  WARN 31524 --- [SpringApplicationShutdownHook] o.s.b.f.support.DisposableBeanAdapter    : Custom destroy method 'close' on bean with name 'jsonJob1_jsonReader' threw an exception: org.springframework.batch.item.ItemStreamException: Error while closing item reader
+2022-11-30 16:31:04.075  INFO 31524 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-11-30 16:31:04.077  INFO 31524 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-11-30 16:31:04.096  INFO 31524 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-11-30 16:32:29.025  INFO 30876 --- [Test worker] c.k.b.BatchprogramApplicationTests       : Starting BatchprogramApplicationTests using Java 11.0.16 on DESKTOP-18053R8 with PID 30876 (started by �迹�� in C:\Users\�迹��\Documents\sts\batchprogram)
+2022-11-30 16:32:29.027 DEBUG 30876 --- [Test worker] c.k.b.BatchprogramApplicationTests       : Running with Spring Boot v2.6.14-SNAPSHOT, Spring v5.3.24
+2022-11-30 16:32:29.029  INFO 30876 --- [Test worker] c.k.b.BatchprogramApplicationTests       : No active profile set, falling back to 1 default profile: "default"
+2022-11-30 16:32:30.212  INFO 30876 --- [Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-11-30 16:32:30.315  INFO 30876 --- [Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 89 ms. Found 3 JPA repository interfaces.
+2022-11-30 16:32:31.234  INFO 30876 --- [Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-11-30 16:32:31.882  INFO 30876 --- [Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-11-30 16:32:32.354  INFO 30876 --- [Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-11-30 16:32:32.538  INFO 30876 --- [Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.14.Final
+2022-11-30 16:32:32.959  INFO 30876 --- [Test worker] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-11-30 16:32:33.169  INFO 30876 --- [Test worker] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2022-11-30 16:32:34.155  INFO 30876 --- [Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-11-30 16:32:34.169  INFO 30876 --- [Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-11-30 16:32:35.099  WARN 30876 --- [Test worker] o.s.b.a.batch.JpaBatchConfigurer         : JPA does not support custom isolation levels, so locks may not be taken when launching Jobs
+2022-11-30 16:32:35.103  INFO 30876 --- [Test worker] o.s.b.c.r.s.JobRepositoryFactoryBean     : No database type set, using meta data indicating: MYSQL
+2022-11-30 16:32:35.144  INFO 30876 --- [Test worker] o.s.b.c.l.support.SimpleJobLauncher      : No TaskExecutor has been set, defaulting to synchronous executor.
+2022-11-30 16:32:35.754  INFO 30876 --- [Test worker] c.k.b.BatchprogramApplicationTests       : Started BatchprogramApplicationTests in 7.292 seconds (JVM running for 12.451)
+2022-11-30 16:32:35.757  INFO 30876 --- [Test worker] o.s.b.a.b.JobLauncherApplicationRunner   : Running default command line with: []
+2022-11-30 16:32:35.938  INFO 30876 --- [Test worker] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.kinx.batchprogram.domain.TestDeptRepository], using SpringBootContextLoader
+2022-11-30 16:32:35.939  INFO 30876 --- [Test worker] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [com.kinx.batchprogram.domain.TestDeptRepository]: no resource found for suffixes {-context.xml, Context.groovy}.
+2022-11-30 16:32:35.940  INFO 30876 --- [Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.kinx.batchprogram.domain.TestDeptRepository]: TestDeptRepository does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2022-11-30 16:32:35.955  INFO 30876 --- [Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.kinx.batchprogram.BatchprogramApplication for test class com.kinx.batchprogram.domain.TestDeptRepository
+2022-11-30 16:32:35.960  INFO 30876 --- [Test worker] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2022-11-30 16:32:35.960  INFO 30876 --- [Test worker] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@351fadfa, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@7e1953f7, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@26f07261, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@2b55ea4d, org.springframework.test.context.support.DirtiesContextTestExecutionListener@63ede2a0, org.springframework.test.context.transaction.TransactionalTestExecutionListener@57df93c1, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@72998021, org.springframework.test.context.event.EventPublishingTestExecutionListener@761a0bbd, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@7a6e0f3c, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@5184da2b, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@6fa2d0b2, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@49c37918, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@43de88f3, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@347c5721]
+2022-11-30 16:32:36.381  WARN 30876 --- [SpringApplicationShutdownHook] o.s.b.f.support.DisposableBeanAdapter    : Custom destroy method 'close' on bean with name 'jsonJob2_jsonReader' threw an exception: org.springframework.batch.item.ItemStreamException: Error while closing item reader
+2022-11-30 16:32:36.382  WARN 30876 --- [SpringApplicationShutdownHook] o.s.b.f.support.DisposableBeanAdapter    : Custom destroy method 'close' on bean with name 'jsonJob1_jsonReader' threw an exception: org.springframework.batch.item.ItemStreamException: Error while closing item reader
+2022-11-30 16:32:36.383  INFO 30876 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-11-30 16:32:36.386  INFO 30876 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-11-30 16:32:36.404  INFO 30876 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
